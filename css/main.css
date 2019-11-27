@@ -7,6 +7,10 @@ header {
     width: auto;
 }
 
+.nav-image {
+    width: 140px;
+}
+
 .main_title {
     margin: 5px;
     padding: 10px;
