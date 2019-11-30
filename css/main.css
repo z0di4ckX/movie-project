@@ -73,6 +73,10 @@ header {
     padding: 20vmin 0vmin;
 }
 
+.section-3 {
+    padding: 20vmin 0vmin;
+}
+
 .buttom-left {
     position: flex;
     float: left;
