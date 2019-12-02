@@ -18,7 +18,7 @@ header {
 }
 
 .card {
-    width: 13rem;
+    width: 18rem;
     display: grid;
     height: 370px;
     grid-template-columns: 200px;
