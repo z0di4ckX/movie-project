@@ -11,43 +11,21 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="popular.html">Popular</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Genres
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="action.html">Action</a>
-                    <a class="dropdown-item" href="adventure.html">Adventure</a>
-                    <a class="dropdown-item" href="animation.html">Animation</a>
-                    <a class="dropdown-item" href="comedy.html">Comedy</a>
-                    <a class="dropdown-item" href="drama.html">Drama</a>
-                    <a class="dropdown-item" href="horror.html">Horror</a>
-                    <a class="dropdown-item" href="romance.html">Romance</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Other</a>
-                    </div>
-                 </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-            </nav>
-        </nav>
+        <div class="conteiner">
+            <ul>
+            <li><a href="index.html"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="popular.html">Popular</a></li>
+                <li><a href="#"><strong>Genres</strong></a></li>
+                <li><a href="action.html">Action</a></li>
+                <li><a href="adventure.html">Adventure</a></li>
+                <li><a href="animation.html">Animation</a></li>
+                <li><a href="comedy.html">Comedy</a></li>
+                <li><a href="drama.html">Drama</a></li>
+                <li><a href="horror.html">Horror</a></li>
+                <li><a href="romance.html">Romance</a></li>
+            </ul>
+        </div>
     </header>
     <main>
         <h1 class="main_title">Popular</h1>
@@ -158,19 +136,6 @@
                 </div>
             </div>
         </section>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Pages</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
     </main>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
