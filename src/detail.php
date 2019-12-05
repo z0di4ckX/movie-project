@@ -1,11 +1,7 @@
-<?php 
-    include('../include/connect.php');
-
-    $query = "SELECT id_pelicula, titulo, poster FROM pelicula";
-
-    $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
-    
+<?php
+    include("../CRUD/read.php");
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
