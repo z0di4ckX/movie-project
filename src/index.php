@@ -50,20 +50,22 @@
         <section class="section-1 p-0 text-center">
             <div class="row">
                 <table class="table table-strip table-hover table-bordered row_size">
+                    <!--PHP script loop to read data base information  -->
                     <?php while($row = mysqli_fetch_assoc($result)) { 
                         $id_pelicula = $row['id_pelicula'];
                         $poster = $row['poster'];
                         $title = $row['titulo'];
                     ?>
-                    <div class="card text-center text-black bg-primary mb-3"  style="width: 16rem;">
+                    <div class="card text-center text-black bg-light mb-3"  style="width: 16rem;">
                         <a href="detail.php?GETID=<?php echo $id_pelicula; ?>">
                             <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
                         </a>
                         <div class="card-title">
-                            <p><strong><?php echo $title; ?><strong></p>
+                            <p class="card-text"><?php echo $title; ?></p>
                         </div>
                     </div>
                     <?php } ?>
+                    <!--PHP script end loop  -->
                 </table>
             </div>
         </section>

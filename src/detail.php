@@ -1,7 +1,12 @@
-<?php
-    include("../CRUD/read.php");
-?>
+<?php 
+    include('../include/connect.php');
 
+    $id = $_GET['GETID'];
+    $query = "SELECT * FROM pelicula WHERE id_pelicula = '$id'";
+    $pelicula = $conn->query($query);
+
+    $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +25,7 @@
         <div class="conteiner">
             <ul>
             <li><a href="index.html"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
-            <li><a class="active" href="index.html">Home</a></li>
+            <li><a class="active" href="index.php">Home</a></li>
             <li><a href="popular.html">Popular</a></li>
                 <li><a href="#"><strong>Genres</strong></a></li>
                 <li><a href="action.html">Action</a></li>
@@ -37,8 +42,7 @@
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Popular</h1>
-        <h4 class="main_title">movie</h4>
+        <h1 class="main_title">Details</h1>
         <hr>
     </div>
     <main>
@@ -46,20 +50,34 @@
         <section class="section-1 p-0 text-center">
             <div class="row">
                 <table class="table table-strip table-hover table-bordered row_size">
-                    <?php while($row = mysqli_fetch_assoc($result)) { 
-                        $id_pelicula = $row['id_pelicula'];
+                    <!-- PHP script starting loop to read data base infomation -->
+                    <?php while($row = mysqli_fetch_assoc($result)) {
+                        $id = $row['id_pelicula'];
                         $poster = $row['poster'];
                         $title = $row['titulo'];
+                        $text = $row['sinopsis'];
+                        $trailer = $row['trailer'];
                     ?>
-                    <div class="card text-center text-black bg-primary mb-3"  style="width: 16rem;">
-                        <a href="detail.php?GETID=<?php echo $id_pelicula; ?>">
+                    <div class="card text-center text-black bg-light mb-3" style="width: 16rem;">
+                        <a href="detail.php?GETID=<?php echo $id; ?>">
                             <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
                         </a>
+                    </div>
+                    <div class="card card-big">
                         <div class="card-title">
-                            <p><strong><?php echo $title; ?><strong></p>
+                            <h2 class="card-text"><?php echo $title; ?></h2>
                         </div>
+                        <div class="card-body mb-3">
+                            <p class="card-text"><?php echo $text; ?></p>
+                        </div>
+                        <div id="TrailerButton">
+                            <button type="button" class="btn btn-outline-primary rounded-pill" onclick="<?php $trailer; ?>">
+                            Trailer
+                            </button>
+                        </div>  
                     </div>
                     <?php } ?>
+                    <!--PHP script end loop  -->
                 </table>
             </div>
         </section>

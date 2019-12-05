@@ -57,13 +57,28 @@ li a.active {
     padding: 20px;
     width: 15rem;
     display: grid;
-    height: 370px;
+    height: auto;
     grid-template-columns: 200px;
     grid-template-rows: 200px 200px 80px;
     grid-template-areas: "image" "text" "stats";
     border-radius: 18px;
     background: white;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+}
+
+.card-big {
+    margin: 10px 100px;
+    padding: 47px;
+    width: 20rem;
+    display: grid;
+    height: auto;
+    grid-template-columns: 200px;
+    grid-template-rows: 200px 200px 100px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.9);
     font-family: roboto;
     text-align: center;
 }
@@ -77,22 +92,6 @@ li a.active {
     text-align: center;
 }
 
-.card-text {
-    grid-area: text;
-    margin: 20px;
-}
-
-.card-text .date {
-    color: rgb(7, 106, 255);
-    font-size:13px;
-}
-
-.card-text h2 {
-    margin-top:0px;
-    font-size:28px;
-}
-
-
 .card:hover {
     z-index: 100;
     transform: scale(1.15);
@@ -105,18 +104,6 @@ li a.active {
   }
 
 .section-1 {
-    margin: 40px 208px;
-    padding: 2px;
-    text-align: center;
-}
-
-.section-2 {
-    margin: 40px 208px;
-    padding: 2px;
-    text-align: center;
-}
-
-.section-3 {
     margin: 40px 208px;
     padding: 2px;
     text-align: center;
