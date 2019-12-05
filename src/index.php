@@ -1,3 +1,13 @@
+<?php 
+    include('../include/connect.php');
+
+    $query = "SELECT id_pelicula, titulo, poster FROM pelicula";
+
+    $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
+    while($record = mysqli_fetch_assoc($result)) {
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,31 +48,35 @@
         <!-- Section 1 -->
         <section class="section-1 p-0 text-center">
             <div class="row">
-                <div class="card card-image">
+              <div class="card-image card col-sm">
+                    <div class="card-text">
+                        <img class="card-image" src="<?php echo $record['poster']; ?>" />
+                    </div>
+                    <div class="title">
+                        <a href="#"><?php echo $record['titulo']; ?></a>
+                    </div>
+                </div>
+                <div class="card card-image col-sm">
+                    <div class="card-text">
+                        <img src="<?php echo $record['poster']; ?>" />
+                    </div>
+                    <div class="title">
+                        <a href="#"><?php echo $record['titulo']; ?></a>
+                    </div>
+                </div>
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
                     </div>
                 </div>
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
                     </div>
                 </div>
-                <div class="card card-image">
-                    <div class="card-text">
-                        <span class="date">4 days ago</span>
-                        <h2>Post One</h2>
-                    </div>
-                </div>
-                <div class="card card-image">
-                    <div class="card-text">
-                        <span class="date">4 days ago</span>
-                        <h2>Post One</h2>
-                    </div>
-                </div>
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
@@ -73,31 +87,31 @@
         <!-- Section 2 -->
         <section class="section-2 p-0 text-center">
             <div class="row">
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
                     </div>
                 </div>
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
                     </div>
                 </div>
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
                     </div>
                 </div>
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
                     </div>
                 </div>
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
@@ -108,31 +122,31 @@
         <!-- Section 3 -->
         <section class="section-3 p-0 text-center">
             <div class="row">
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
                     </div>
                 </div>
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
                     </div>
                 </div>
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
                     </div>
                 </div>
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
                     </div>
                 </div>
-                <div class="card card-image">
+                <div class="card card-image col-sm">
                     <div class="card-text">
                         <span class="date">4 days ago</span>
                         <h2>Post One</h2>
@@ -140,6 +154,7 @@
                 </div>
             </div>
         </section>
+    <?php } ?>
         <button type="button" class="buttom-right btn btn-outline-primary rounded-pill">Pages...</button>
     </main>
     <!-- Start bootstrap script -->
