@@ -42,7 +42,7 @@
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Horror</h1>
+        <h1 class="main_title">Science Fiction</h1>
         <hr>
     </div>
     <main>
@@ -69,7 +69,8 @@
                 </table>
             </div>
         </section>
-        <button type="button" class="buttom-right btn btn-outline-primary rounded-pill">Pages...</button>
+        <a href="index.php" class="buttom-right btn btn-outline-primary rounded-pill">Next</a>
+        <a href="suspense.php" class="buttom-left  btn btn-outline-primary rounded-pill">Back</a>
     </main>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

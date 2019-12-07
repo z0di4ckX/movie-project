@@ -70,8 +70,8 @@ li a.active {
 
 .card-big {
     margin: 10px 100px;
-    padding: 47px;
-    width: 20rem;
+    padding: 60px;
+    width: 35rem;
     display: grid;
     height: auto;
     grid-template-columns: 200px;
@@ -80,8 +80,6 @@ li a.active {
     background: white;
     box-shadow: 2px 3px 5px rgba(0,0,0,0.9);
     font-family: roboto;
-    text-align: center;
-    transition: none;
 }
 
 .card-image {
@@ -114,6 +112,16 @@ li a.active {
     margin: 50px 220px;
     padding: 1.2rem 3rem;
     float: right;
+}
+
+.buttom-right:hover {
+    transform: scale(1.12);
+}
+
+.buttom-left {
+    margin: 50px 220px;
+    padding: 1.2rem 3rem;
+    float: left;
 }
 
 .buttom-right:hover {

@@ -58,6 +58,7 @@
                         $poster = $row['poster'];
                         $title = $row['titulo'];
                         $text = $row['sinopsis'];
+                        $geners = $row['categoria'];
                         $trailer = $row['trailer'];
                         ?>
                     <div class="card text-center text-black bg-light mb-3" style="width: 16rem;">
@@ -67,14 +68,22 @@
                     </div>
                     <div class="card card-big">
                         <div class="card-title">
-                            <h2 class="card-text"><?php echo $title; ?></h2>
+                            <h2 class="card-text"><strong><?php echo $title; ?></strong></h2>
+                        </div>
+                        <div class="card-title">
+                            <h5 class="card-title"><strong>The Genres</strong></h5>
+                            <p class="card-text"></p>
                         </div>
                         <div class="card-body mb-3">
+                            <h5 class="card-title"><strong>The Synopsis</strong></h5>
                             <p class="card-text"><?php echo $text; ?></p>
+                        </div>
+                        <div class="card-body mb-3">
+                            <h5 class="card-title"><strong>The Cast</strong></h5>
                         </div>
                         <div id="TrailerButton">
                             <a href="#" class="btn btn-outline-primary rounded-pill" onclick="trailer()">
-                            Trailer
+                                Trailer
                             </a>
                         </div>  
                     </div>
@@ -83,7 +92,8 @@
                 </table>
             </div>
         </section>
-        <button type="button" class="buttom-right btn btn-outline-primary rounded-pill">Pages...</button>
+        <a href="action.php" class="buttom-right btn btn-outline-primary rounded-pill">Next</a>
+        <a href="index.php" class="buttom-left  btn btn-outline-primary rounded-pill">Back</a>
     </main>
     <script type="text/javascript" src="../js/main.js"></script>
     <!-- Start bootstrap script -->

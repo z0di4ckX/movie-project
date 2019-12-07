@@ -70,7 +70,8 @@
                 </table>
             </div>
         </section>
-        <button type="button" class="buttom-right btn btn-outline-primary rounded-pill">Pages...</button>
+        <a href="suspense.php" class="buttom-right btn btn-outline-primary rounded-pill">Next</a>
+        <a href="animation.php" class="buttom-left  btn btn-outline-primary rounded-pill">Back</a>
     </main>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
