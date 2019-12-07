@@ -1,7 +1,7 @@
 <?php 
     include('../include/connect.php');
 
-    $query = "SELECT id_pelicula, titulo, poster FROM pelicula";
+    $query = "SELECT id_pelicula, titulo, poster,categoria  FROM pelicula WHERE categoria = 2";
 
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
     
@@ -35,7 +35,6 @@
                 <li><a href="horror.php">Horror</a></li>
                 <li><a href="suspense.php">Suspense</a></li>
                 <li><a href="#">Romance</a></li>
-                <li><a href="scienceFiction.php">Science fiction</a></li>
             </ul>
         </div>
         <div>
@@ -43,8 +42,7 @@
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Popular</h1>
-        <h4 class="main_title">movie</h4>
+        <h1 class="main_title">Suspense</h1>
         <hr>
     </div>
     <main>

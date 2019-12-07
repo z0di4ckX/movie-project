@@ -24,17 +24,19 @@
     <header>
         <div class="conteiner">
             <ul>
-            <li><a href="index.html"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
+            <li><a href="index.php"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
             <li><a class="active" href="index.php">Home</a></li>
-            <li><a href="popular.html">Popular</a></li>
+            <li><a href="#">Popular</a></li>
                 <li><a href="#"><strong>Genres</strong></a></li>
-                <li><a href="action.html">Action</a></li>
-                <li><a href="adventure.html">Adventure</a></li>
-                <li><a href="animation.html">Animation</a></li>
-                <li><a href="comedy.html">Comedy</a></li>
-                <li><a href="drama.html">Drama</a></li>
-                <li><a href="horror.html">Horror</a></li>
-                <li><a href="romance.html">Romance</a></li>
+                <li><a href="action.php">Action</a></li>
+                <li><a href="adventure.php">Adventure</a></li>
+                <li><a href="animation.php">Animation</a></li>
+                <li><a href="#">Comedy</a></li>
+                <li><a href="#">Drama</a></li>
+                <li><a href="horror.php">Horror</a></li>
+                <li><a href="suspense.php">Suspense</a></li>
+                <li><a href="#">Romance</a></li>
+                <li><a href="scienceFiction.php">Science fiction</a></li>
             </ul>
         </div>
         <div>
@@ -71,22 +73,11 @@
                             <p class="card-text"><?php echo $text; ?></p>
                         </div>
                         <div id="TrailerButton">
-                            <button type="button" class="btn btn-outline-primary rounded-pill" onclick="trailer()">
+                            <a href="#" class="btn btn-outline-primary rounded-pill" onclick="trailer()">
                             Trailer
-                            </button>
+                            </a>
                         </div>  
                     </div>
-                    <div class="iframeDisplay"></div>
-
-                    <script type="text/javascript">
-                        var url = <?php echo $trailer ?>;
-                        console.log(url);
-
-                        function trailer() {
-
-                            document.getElementById("iframeDisplay").innerHTML = ""+url+"";
-                        }
-                    </script>
                     <?php } ?>
                     <!--PHP script end loop  -->
                 </table>
