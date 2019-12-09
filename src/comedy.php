@@ -1,7 +1,7 @@
 <?php 
     include('../include/connect.php');
 
-    $query = "SELECT id_pelicula, titulo, poster,categoria  FROM pelicula WHERE categoria = 4";
+    $query = "SELECT id_pelicula, titulo, poster,categoria  FROM pelicula WHERE categoria = 8";
 
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
     
@@ -26,6 +26,7 @@
             <li><a href="index.php"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
             <li><a class="active" href="index.php">Home</a></li>
             <li><a href="#">Popular</a></li>
+            <li><a href="#"><strong>Genres</strong></a></li>
             <li><a href="action.php">Action</a></li>
                 <li><a href="adventure.php">Adventure</a></li>
                 <li><a href="animation.php">Animation</a></li>
@@ -42,7 +43,7 @@
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Science Fiction</h1>
+        <h1 class="main_title">Comedy</h1>
         <hr>
     </div>
     <main>
@@ -69,8 +70,8 @@
                 </table>
             </div>
         </section>
-        <a href="index.php" class="buttom-right btn btn-outline-primary rounded-pill">Next</a>
-        <a href="suspense.php" class="buttom-left  btn btn-outline-primary rounded-pill">Back</a>
+        <a href="horror.php" class="buttom-right btn btn-outline-primary rounded-pill">Next</a>
+        <a href="adventure.php" class="buttom-left  btn btn-outline-primary rounded-pill">Back</a>
     </main>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

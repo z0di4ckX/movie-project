@@ -30,11 +30,11 @@
                 <li><a href="action.php">Action</a></li>
                 <li><a href="adventure.php">Adventure</a></li>
                 <li><a href="animation.php">Animation</a></li>
-                <li><a href="#">Comedy</a></li>
-                <li><a href="#">Drama</a></li>
+                <li><a href="comedy.php">Comedy</a></li>
+                <li><a href="drama.php">Drama</a></li>
                 <li><a href="horror.php">Horror</a></li>
                 <li><a href="suspense.php">Suspense</a></li>
-                <li><a href="#">Romance</a></li>
+                <li><a href="romance.php">Romance</a></li>
                 <li><a href="scienceFiction.php">Science fiction</a></li>
             </ul>
         </div>
