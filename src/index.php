@@ -36,6 +36,12 @@
                 <li><a href="suspense.php">Suspense</a></li>
                 <li><a href="romance.php">Romance</a></li>
                 <li><a href="scienceFiction.php">Science fiction</a></li>
+                <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown"><strong>
+                Other</strong><span class="caret"></span>
+                </button>
+                    <li class="dropdown-menu"><a href="showModified.php">Update Movie</a></li>
+                </div>
             </ul>
         </div>
         <div>
