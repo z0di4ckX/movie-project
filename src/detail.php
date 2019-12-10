@@ -91,8 +91,8 @@
                 </table>
             </div>
         </section>
-        <a href="action.php" class="buttom-right btn btn-outline-primary rounded-pill">Next</a>
-        <a href="index.php" class="buttom-left  btn btn-outline-primary rounded-pill">Back</a>
+        <a href="action.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Next</a>
+        <a href="index.php" class="buttom-left  btn btn-outline-primary rounded-pill mb-3">Back</a>
     </main>
     <script type="text/javascript" src="../js/main.js"></script>
     <!-- Start bootstrap script -->

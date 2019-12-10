@@ -28,7 +28,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 8.7%;
+    width: auto;
     background-color: #fff;
     position: fixed;
     height: 100%;
@@ -109,9 +109,10 @@ li a.active {
 }
 
 .buttom-right {
-    margin: 50px 220px;
+    margin: 50px 120px;
     padding: 1.2rem 3rem;
     float: right;
+    text-align: center;
 }
 
 .buttom-right:hover {
@@ -120,8 +121,9 @@ li a.active {
 
 .buttom-left {
     margin: 50px 220px;
-    padding: 1.2rem 3rem;
+    padding: 4.2rem 3rem;
     float: left;
+    text-align: center;
 }
 
 .buttom-right:hover {

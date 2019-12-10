@@ -70,7 +70,7 @@
                 </table>
             </div>
         </section>
-        <a href="action.php" class="buttom-right btn btn-outline-primary rounded-pill">Next</a>
+        <a href="action.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Next</a>
     </main>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
