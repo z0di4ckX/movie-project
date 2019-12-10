@@ -1,8 +1,8 @@
-<?php 
-    include('../include/connect.php');
+<?php include('../include/connect.php'); 
 
-    $query = "SELECT id_pelicula, titulo, poster FROM pelicula";
+    $id = $_GET['GETID'];
 
+    $query = "SELECT * FROM pelicula WHERE id_pelicula = '.$id.'";
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
     
 ?>
@@ -26,7 +26,6 @@
             <li><a href="index.php"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
             <li><a class="active" href="index.php">Home</a></li>
             <li><a href="#">Popular</a></li>
-            <li><a href="#"><strong>Genres</strong></a></li>
             <li><a href="action.php">Action</a></li>
                 <li><a href="adventure.php">Adventure</a></li>
                 <li><a href="animation.php">Animation</a></li>
@@ -50,28 +49,56 @@
     <main>
         <!-- Section 1 -->
         <section class="section-1 p-0 text-center">
-            <div class="row">
-                <table class="table table-strip table-hover table-bordered row_size">
-                    <!--PHP script loop to read data base information  -->
-                    <?php while($row = mysqli_fetch_assoc($result)) { 
-                        $id = $row['id_pelicula'];
-                        $poster = $row['poster'];
-                        $title = $row['titulo'];
-                    ?>
-                    <div class="card text-center text-black bg-light mb-3"  style="width: 16rem;">
-                        <a href="detail.php?GETID=<?php echo $id; ?>">
-                            <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
-                        </a>
-                        <div class="card-title">
-                            <p class="card-text"><?php echo $title; ?></p>
-                        </div>
-                    </div>
-                    <?php } ?>
-                    <!--PHP script end loop  -->
-                </table>
+            <?php 
+                while($row = mysqli_fetch_assoc($result)) {
+                    $id = $row['id_pelicula'];
+                    $title = $row['titulo'];
+                    $categoria = $row['categoria'];
+                    $dates = $row['release_date'];
+                    $sinopsis = $row['sinopsis'];
+                    $poster = $row['poster'];
+                    $director = $row['director'];
+                    $publicadora = $row['publicadora'];
+                    $clasificacion = $row['clasificacion'];
+                    $acotr1 = $row['actor1'];
+                    $acotr2 = $row['actor2'];
+                    $acotr3 = $row['actor3'];
+                    $trailer = $row['trailer']
+            ?>
+        <form name="modificar" method="POST" action="updateMovie.php?GETID=<?php echo $id; ?>">
+            <div class="form-group">
+                <label for="title">Movie Title</label>
+                <small id="title" class="form-text text-muted"><?php echo $title; ?></small>
             </div>
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <input type="text" name="categoria" class="form-control" value="<?php echo $categoria; ?>">
+            </div>
+            <div class="form-group">
+                <label for="sinopsis">Sinopsis</label>
+                <input type="text" name="sinopsis" class="form-control" value="<?php echo $sinopsis; ?>">
+            </div>
+            <div class="form-group">
+                <label for="poster">Images</label>
+                <input type="text" name="poster" class="form-control" value="<?php echo $poster; ?>">
+            </div>
+            <div class="form-group">
+                <label for="director">Director</label>
+                <input type="text" name="director" class="form-control" value="<?php echo $director; ?>">
+            </div>
+            <div class="form-group">
+                <label for="pulicadora">Publicadora</label>
+                <input type="text" name="pulicadora" class="form-control" value="<?php echo $publicadora; ?>">
+            </div>
+            <div class="form-group">
+                <label for="trailer">Trailer</label>
+                <input type="text" name="trailer" class="form-control" value="<?php echo $trailer; ?>">
+            </div>
+            <button type="submit" class="btn btn-success" name="Guardar" value="Actualizar">Submit</button>
+            <a class="btn btn-primary" href="index.php">Back</a>
+        </form>
+                <?php } ?>
         </section>
-        <a href="action.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Next</a>
     </main>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

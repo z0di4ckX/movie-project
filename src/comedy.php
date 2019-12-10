@@ -53,12 +53,12 @@
                 <table class="table table-strip table-hover table-bordered row_size">
                     <!--PHP script loop to read data base information  -->
                     <?php while($row = mysqli_fetch_assoc($result)) { 
-                        $id_pelicula = $row['id_pelicula'];
+                        $id = $row['id_pelicula'];
                         $poster = $row['poster'];
                         $title = $row['titulo'];
                     ?>
                     <div class="card text-center text-black bg-light mb-3"  style="width: 16rem;">
-                        <a href="detail.php?GETID=<?php echo $id_pelicula; ?>">
+                        <a href="detail.php?GETID=<?php echo $id; ?>">
                             <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
                         </a>
                         <div class="card-title">
