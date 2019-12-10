@@ -72,7 +72,7 @@ li a.active {
     margin: 10px 100px;
     padding: 60px;
     width: 35rem;
-    display: grid;
+    display: none;
     height: auto;
     grid-template-columns: 200px;
     grid-template-rows: 200px 200px 100px;
@@ -132,4 +132,43 @@ li a.active {
 
 .dropdown:hover>.dropdown-menu {
     display: block;
+}
+
+.bg-modal {
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-contents {
+	height: 400px;
+	width: auto;
+	background-color: white;
+	text-align: center;
+	padding: 40px;
+	position: relative;
+    border-radius: 4px;
+}
+
+input {
+	margin: 15px auto;
+	display: block;
+	width: 50%;
+	padding: 8px;
+	border: 1px solid gray;
+}
+
+.close {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 42px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
 }

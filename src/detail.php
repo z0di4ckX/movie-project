@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="../js/main.js"></script>
     <title>Interflix</title>
 </head>
 <body>
@@ -87,9 +88,7 @@
                             <h5 class="card-title"><strong>The Cast</strong></h5>
                         </div>
                         <div id="TrailerButton">
-                            <a href="#" class="btn btn-outline-primary rounded-pill" onclick="trailer()">
-                                Trailer
-                            </a>
+                            <a href="#" id="button" class="btn btn-outline-primary rounded-pill">Trailer</a>
                         </div>  
                     </div>
                     <?php } ?>
@@ -97,6 +96,14 @@
                 </table>
             </div>
         </section>
+        <div class="bg-modal">
+            <div class="modal-contents">
+                <div class="close">+</div>
+                <form action="">
+                    <?php echo $trailer; ?>
+                </form>
+            </div>
+        </div>
         <a href="index.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Back</a>
     </main>
     <script type="text/javascript" src="../js/main.js"></script>
