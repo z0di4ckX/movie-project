@@ -65,6 +65,8 @@
                         $title = $row['titulo'];
                         $text = $row['sinopsis'];
                         $geners = $row['categoria'];
+                        $datas = $row['release_date'];
+                        $clasificacion = $row['clasificacion'];
                         $trailer = $row['trailer'];
                         ?>
                     <div class="card text-center text-black bg-light mb-3" style="width: 16rem;">
@@ -79,6 +81,8 @@
                         <div class="card-title">
                             <h5 class="card-title"><strong>The Genres</strong></h5>
                             <p class="card-text"></p>
+                            <p class="card-text datas"><?php echo $datas; ?></p>
+                            <p class="card-text clasificacion"><?php echo $clasificacion; ?></p>
                         </div>
                         <div class="card-body mb-3">
                             <h5 class="card-title"><strong>The Synopsis</strong></h5>
