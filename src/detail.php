@@ -96,14 +96,16 @@
                 </table>
             </div>
         </section>
-        <div class="bg-modal">
-            <div class="modal-contents">
-                <div class="close">+</div>
-                <form action="">
-                    <?php echo $trailer; ?>
-                </form>
+        <section>
+            <div class="bg-modal">
+                <div class="modal-contents">
+                    <div class="close">+</div>
+                    <form action="">
+                        <?php echo $trailer; ?>
+                    </form>
+                </div>
             </div>
-        </div>
+        </section>
         <a href="index.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Back</a>
     </main>
     <script type="text/javascript" src="../js/main.js"></script>
