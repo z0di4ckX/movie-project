@@ -25,7 +25,6 @@
             <ul>
             <li><a href="index.php"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
             <li><a class="active" href="index.php">Home</a></li>
-            <li><a href="#">Popular</a></li>
             <li><a href="#"><strong>Genres</strong></a></li>
             <li><a href="action.php">Action</a></li>
                 <li><a href="adventure.php">Adventure</a></li>
@@ -34,8 +33,14 @@
                 <li><a href="drama.php">Drama</a></li>
                 <li><a href="horror.php">Horror</a></li>
                 <li><a href="suspense.php">Suspense</a></li>
-                <li><a href="romance.php">Romance</a></li>
                 <li><a href="scienceFiction.php">Science fiction</a></li>
+                <li><a href="romance.php">Romance</a></li>
+                <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown"><strong>
+                Other</strong><span class="caret"></span>
+                </button>
+                    <li class="dropdown-menu"><a href="showModified.php">Update Movie</a></li>
+                </div>
             </ul>
         </div>
         <div>
@@ -70,7 +75,7 @@
                 </table>
             </div>
         </section>
-        <a href="index.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Next</a>
+        <a href="romance.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Next</a>
         <a href="suspense.php" class="buttom-left  btn btn-outline-primary rounded-pill mb-3">Back</a>
     </main>
     <!-- Start bootstrap script -->
