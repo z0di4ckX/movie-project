@@ -68,11 +68,11 @@ li a.active {
     text-align: center;
 }
 
-.card-big {
+#card-big {
     margin: 10px auto;
     padding: 60px;
     width: 45rem;
-    display: none;
+    display: inline-block;
     height: auto;
     grid-template-columns: 200px;
     grid-template-rows: 200px 200px 100px;
@@ -80,6 +80,8 @@ li a.active {
     background: white;
     box-shadow: 2px 3px 5px rgba(0,0,0,0.9);
     font-family: roboto;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-image {

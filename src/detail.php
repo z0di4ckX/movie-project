@@ -80,7 +80,7 @@
                             <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
                         </a>
                     </div>
-                    <div class="card card-big">
+                    <div id="card-big">
                         <div class="card-title">
                             <h2 class="card-text"><strong><?php echo $title; ?></strong></h2>
                         </div>
