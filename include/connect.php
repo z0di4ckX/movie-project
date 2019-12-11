@@ -3,7 +3,7 @@
     $host = "localhost";
     $username = "root";
     $password = "";
-    $db = "interflixdb";
+    $db = "movie_project";
 
     $conn = mysqli_connect($host, $username, $password, $db);
 
