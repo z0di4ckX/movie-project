@@ -72,8 +72,16 @@
                         $text = $row['sinopsis'];
                         $datas = $row['release_date'];
                         $clasificacion = $row['clasificacion'];
-                        $geners = $row['categoria'];
+                        $id_geners = $row['categoria'];
                         $trailer = $row['trailer'];
+
+                        $query2 = "SELECT * FROM categoria WHERE id_categoria = '$id_geners'";
+                        $result2 = mysqli_query($conn, $query2) or die("databese error:" . mysqli_error($conn));
+
+                        while($row = mysqli_fetch_assoc($result2)) {
+                            $geners = $row['categoria'];
+                        }
+
                         ?>
                     <div class="card text-center text-black bg-light mb-3" style="width: 27rem;">
                         <a href="detail.php?GETID=<?php echo $id; ?>">
@@ -95,9 +103,6 @@
                         <div class="card-body mb-3">
                             <h5 class="card-title"><strong>The Synopsis</strong></h5>
                             <p class="card-text"><?php echo $text; ?></p>
-                        </div>
-                        <div class="card-body mb-3">
-                            <h5 class="card-title"><strong>The Cast</strong></h5>
                         </div>
                         <div class="row row_size card-button">
                             <div>
