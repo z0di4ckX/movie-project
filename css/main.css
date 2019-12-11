@@ -108,6 +108,15 @@ li a.active {
     text-align: center;
 }
 
+
+.buttom-right {
+    margin: 50px 120px;
+    padding: 1.2rem 3rem;
+    float: right;
+    text-align: center;
+}
+
+
 .text-center {
     justify-content: center;
 }

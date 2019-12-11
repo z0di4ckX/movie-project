@@ -2,9 +2,16 @@
 
     $id = $_GET['GETID'];
 
-    $query = "SELECT * FROM pelicula WHERE id_pelicula = '.$id.'";
+
+    $query = "SELECT * FROM pelicula WHERE id_pelicula = '$id'";
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
     
+    $queryActor = "SELECT * FROM actor";
+    $actorResult = mysqli_query($conn, $queryActor);
+
+    $actorResult2 = mysqli_query($conn, $queryActor);
+    $actorResult3 = mysqli_query($conn, $queryActor);
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +28,8 @@
 </head>
 <body>
     <header>
-        <div class="conteiner">
+
+        <div class="container">
             <ul>
             <li><a href="index.php"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
             <li><a class="active" href="index.php">Home</a></li>
@@ -36,10 +44,13 @@
                 <li><a href="scienceFiction.php">Science fiction</a></li>
                 <li><a href="romance.php">Romance</a></li>
                 <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown"><strong>
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expaned="false"><strong>
                 Other</strong><span class="caret"></span>
                 </button>
-                    <li class="dropdown-menu"><a href="showModified.php">Update Movie</a></li>
+                    <div class="dropdown-menu" aria-labeledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="showModified.php">Update Movie</a>
+                        <a class="dropdown-item" href="actor.php">Add Actor</a>
+                    </div>
                 </div>
             </ul>
         </div>
@@ -58,34 +69,38 @@
             <?php 
                 while($row = mysqli_fetch_assoc($result)) {
                     $id = $row['id_pelicula'];
-                    $title = $row['titulo'];
+                    $titulo = $row['titulo'];
                     $categoria = $row['categoria'];
-                    $dates = $row['release_date'];
+                    $release_date = $row['release_date'];
                     $sinopsis = $row['sinopsis'];
                     $poster = $row['poster'];
                     $director = $row['director'];
                     $publicadora = $row['publicadora'];
                     $clasificacion = $row['clasificacion'];
-                    $acotr1 = $row['actor1'];
-                    $acotr2 = $row['actor2'];
-                    $acotr3 = $row['actor3'];
-                    $trailer = $row['trailer']
+                    $actor1 = $row['actor1'];
+                    $actor2 = $row['actor2'];
+                    $actor3 = $row['actor3'];
+                    $trailer =$row['trailer'];
             ?>
         <form name="modificar" method="POST" action="updateMovie.php?GETID=<?php echo $id; ?>">
             <div class="form-group">
-                <label for="title">Movie Title</label>
-                <small id="title" class="form-text text-muted"><?php echo $title; ?></small>
+                <label for="titulo">Movie Title</label>
+                <input type="text" name="titulo" class="form-control" value="<?php echo $titulo; ?>"></input>
             </div>
             <div class="form-group">
                 <label for="categoria">Categoria</label>
                 <input type="text" name="categoria" class="form-control" value="<?php echo $categoria; ?>">
             </div>
             <div class="form-group">
+                <label for="release_date">Fecha de Estreno</label>
+                <input type="text" name="release_date" class="form-control" value="<?php echo $release_date; ?>">
+            </div>
+            <div class="form-group">
                 <label for="sinopsis">Sinopsis</label>
                 <input type="text" name="sinopsis" class="form-control" value="<?php echo $sinopsis; ?>">
             </div>
             <div class="form-group">
-                <label for="poster">Images</label>
+                <label for="poster">Poster</label>
                 <input type="text" name="poster" class="form-control" value="<?php echo $poster; ?>">
             </div>
             <div class="form-group">
@@ -93,6 +108,54 @@
                 <input type="text" name="director" class="form-control" value="<?php echo $director; ?>">
             </div>
             <div class="form-group">
+                <label for="publicadora">Publicadora</label>
+                <input type="text" name="publicadora" class="form-control" value="<?php echo $publicadora; ?>">
+            </div>
+            <div class="form-group">
+                <label for="clasificacion"> Clasificacion </label>
+                <input type="text" name="clasificacion" class="form-control" value="<?php echo $clasificacion; ?>">
+            </div>
+            <div class="form-group">
+                <label for="actor1">Actor 1</label>
+                <select class="form-control" name="actor1">
+                <option value="" SELECTED> Seleccionar Actor</option>
+                <?php
+                while($act = $actorResult->fetch_assoc()) {
+                    $idAct = $act['id_actor'];
+                    $nombre = $act['nombre'];
+                    $apellidos = $act['apellidos'];
+                    echo "<option value='$idAct'> $idAct.&nbsp;$nombre $apellidos </option>";
+                }
+                ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="actor2">Actor 2</label>
+                <select class="form-control" name="actor2">
+                <option value="" SELECTED> Seleccionar Actor</option>
+                <?php
+                while($act = $actorResult2->fetch_assoc()) {
+                    $idAct = $act['id_actor'];
+                    $nombre = $act['nombre'];
+                    $apellidos = $act['apellidos'];
+                    echo "<option value='$idAct'> $idAct.&nbsp;$nombre $apellidos </option>";
+                }
+                ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="actor3">Actor 3</label>
+                <select class="form-control" name="actor3">
+                <option value="" SELECTED> Seleccionar Actor</option>
+                <?php
+                while($act = $actorResult3->fetch_assoc()) {
+                    $idAct = $act['id_actor'];
+                    $nombre = $act['nombre'];
+                    $apellidos = $act['apellidos'];
+                    echo "<option value='$idAct'> $idAct.&nbsp;$nombre $apellidos </option>";
+                }
+                ?>
+                </select>
                 <label for="pulicadora">Publicadora</label>
                 <input type="text" name="pulicadora" class="form-control" value="<?php echo $publicadora; ?>">
             </div>

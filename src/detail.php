@@ -3,10 +3,11 @@
 
     $id = $_GET['GETID'];
     $query = "SELECT * FROM pelicula WHERE id_pelicula = '$id'";
-    $queryJoin = "SELECT pelicula.id_pelicula, pelicula.categoria,categoria.categoria FROM pelicula INNER JOIN categoria ON pelicula.id_categoria = categoria.id_categoria";
+
     $pelicula = $conn->query($query);
 
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
+    
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +40,14 @@
                 <li><a href="scienceFiction.php">Science fiction</a></li>
                 <li><a href="romance.php">Romance</a></li>
                 <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown"><strong>
+
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expaned="false"><strong>
                 Other</strong><span class="caret"></span>
                 </button>
-                    <li class="dropdown-menu"><a href="showModified.php">Update Movie</a></li>
+                    <div class="dropdown-menu" aria-labeledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="showModified.php">Update Movie</a>
+                        <a class="dropdown-item" href="actor.php">Add Actor</a>
+                    </div>
                 </div>
             </ul>
         </div>
@@ -65,12 +70,10 @@
                         $poster = $row['poster'];
                         $title = $row['titulo'];
                         $text = $row['sinopsis'];
-                        $datas = $row['release_date'];
                         $geners = $row['categoria'];
-                        $clasificacion = $row['clasificacion'];
                         $trailer = $row['trailer'];
                         ?>
-                    <div class="card text-center text-black bg-light mb-3" style="width: 26rem;">
+                    <div class="card text-center text-black bg-light mb-3" style="width: 27rem;">
                         <a href="detail.php?GETID=<?php echo $id; ?>">
                             <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
                         </a>
@@ -96,9 +99,16 @@
                         </div>
                         <div id="TrailerButton">
                             <a href="#" id="button" class="btn btn-outline-primary rounded-pill">Trailer</a>
+
+                        </div>
+                        <div class="card-body mb-3">
+                            <a href="showModified.php?GETID=<?php echo $id ?>" class="btn btn-outline-primary rounded-pill">Update Movie</a>
                         </div>  
+                        <div class="card-body mb-3">
+                            <a href="../CRUD/delete.php?GETID=<?php echo $id ?>" class="btn btn-outline-primary rounded-pill">Delete Movie</a>
+                        </div> 
                     </div>
-                    <?php } ?>
+                    <?php   } ?>
                     <!--PHP script end loop  -->
                 </table>
             </div>

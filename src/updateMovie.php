@@ -1,23 +1,23 @@
 <?php 
     include('../include/connect.php');
 
-    $id = $_GET['id_pelicula'];
-    $title = $_POST['title'];
+    $id = $_GET['GETID'];
+    $titulo = $_POST['titulo'];
     $categoria = $_POST['categoria'];
-    $dates = $_POST['release_date'];
+    $release_date = $_POST['release_date'];
     $sinopsis = $_POST['sinopsis'];
     $poster = $_POST['poster'];
     $director = $_POST['director'];
     $publicadora = $_POST['publicadora'];
     $clasificacion = $_POST['clasificacion'];
-    $acotr1 = $_POST['acotr1'];
-    $acotr2 = $_POST['acotr2'];
-    $acotr3 = $_POST['acotr3'];
-    $trailer = $_POST['trailer'];
 
-    $query = "UPDATE pelicula SET title = $title, categoria = $categoria, dates = $release_date,
-    sisnopsis = $sinopsis, poster = $poster, director = $director, publicadora = $publicadora, clasificacion = $clasificacion,
-    acotr1 = $acotr1, actor2 = $acotr2, actor3 = $acotr3, trailer = $trailer WHERE id_pelicula = '$id' ";
+    $actor1 = $_POST['actor1'];
+    $actor2 = $_POST['actor2'];
+    $actor3 = $_POST['actor3'];
+
+    $query = "UPDATE pelicula SET titulo = '$titulo', categoria = '$categoria', release_date = '$release_date',
+    sinopsis = '$sinopsis', poster = '$poster', director = '$director', publicadora = '$publicadora', clasificacion = '$clasificacion',
+    actor1 = '$actor1', actor2 = '$actor2', actor3 = '$actor3' WHERE id_pelicula = '$id' ";
 
     $result = $conn->query($query);
 ?>
@@ -44,7 +44,9 @@
         <?php }else{?>
         
             <h1> Error Modifying Movie <h1>
-        
+
+        <?php echo $conn->error; ?>
+
         <?php } ?>
 
         <?php mysqli_close($conn); ?>

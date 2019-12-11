@@ -2,7 +2,7 @@
 
 include('../connect.php');
 
-$id = $_GET['GetID'];
+$id = $_GET['GETID'];
 
 $query = "DELETE FROM pelicula WHERE id_pelicula = '$id'";
 
