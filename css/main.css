@@ -61,7 +61,7 @@ li a.active {
     grid-template-columns: 200px;
     grid-template-rows: 200px 200px 80px;
     grid-template-areas: "image" "text" "stats";
-    border-radius: 18px;
+    border-radius: 20px;
     background: white;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
     font-family: roboto;

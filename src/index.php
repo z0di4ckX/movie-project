@@ -51,8 +51,7 @@
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Popular</h1>
-        <h4 class="main_title">movie</h4>
+        <h1 class="main_title">Popular Movie</h1>
         <hr>
     </div>
     <main>
