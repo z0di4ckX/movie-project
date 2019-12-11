@@ -71,7 +71,7 @@ li a.active {
 .card-big {
     margin: 10px auto;
     padding: 60px;
-    width: 35rem;
+    width: 45rem;
     display: none;
     height: auto;
     grid-template-columns: 200px;
@@ -101,6 +101,12 @@ li a.active {
     cursor: pointer;
     margin:auto;
   }
+
+.card-button {
+    margin: 5px auto;
+    justify-content: center;
+    align-items: center;
+}
 
 .section-1 {
     margin: 40px 208px;

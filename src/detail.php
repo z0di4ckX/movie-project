@@ -99,16 +99,13 @@
                         <div class="card-body mb-3">
                             <h5 class="card-title"><strong>The Cast</strong></h5>
                         </div>
-                        <div id="TrailerButton">
-                            <a href="#" id="button" class="btn btn-outline-primary rounded-pill">Trailer</a>
-
+                        <div class="row row_size card-button">
+                            <div>
+                                <a href="#" id="button" class="btn btn-outline-primary rounded-pill">Trailer</a>
+                                <a class="btn btn-outline-primary rounded-pill" href="showModified.php?GETID=<?php echo $id ?>">Update Movie</a>
+                                <a class="btn btn-outline-primary rounded-pill" href="../CRUD/delete.php?GETID=<?php echo $id ?>">Delete Movie</a>
+                            </div>
                         </div>
-                        <div class="card-body mb-3">
-                            <a href="showModified.php?GETID=<?php echo $id ?>" class="btn btn-outline-primary rounded-pill">Update Movie</a>
-                        </div>  
-                        <div class="card-body mb-3">
-                            <a href="../CRUD/delete.php?GETID=<?php echo $id ?>" class="btn btn-outline-primary rounded-pill">Delete Movie</a>
-                        </div> 
                     </div>
                     <?php   } ?>
                     <!--PHP script end loop  -->
