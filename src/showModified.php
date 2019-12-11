@@ -2,6 +2,7 @@
 
     $id = $_GET['GETID'];
 
+
     $query = "SELECT * FROM pelicula WHERE id_pelicula = '$id'";
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
     
@@ -10,6 +11,7 @@
 
     $actorResult2 = mysqli_query($conn, $queryActor);
     $actorResult3 = mysqli_query($conn, $queryActor);
+
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +28,7 @@
 </head>
 <body>
     <header>
+
         <div class="container">
             <ul>
             <li><a href="index.php"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
@@ -153,6 +156,12 @@
                 }
                 ?>
                 </select>
+                <label for="pulicadora">Publicadora</label>
+                <input type="text" name="pulicadora" class="form-control" value="<?php echo $publicadora; ?>">
+            </div>
+            <div class="form-group">
+                <label for="trailer">Trailer</label>
+                <input type="text" name="trailer" class="form-control" value="<?php echo $trailer; ?>">
             </div>
             <button type="submit" class="btn btn-success" name="Guardar" value="Actualizar">Submit</button>
             <a class="btn btn-primary" href="index.php">Back</a>

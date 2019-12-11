@@ -10,6 +10,7 @@
     $director = $_POST['director'];
     $publicadora = $_POST['publicadora'];
     $clasificacion = $_POST['clasificacion'];
+
     $actor1 = $_POST['actor1'];
     $actor2 = $_POST['actor2'];
     $actor3 = $_POST['actor3'];
@@ -43,7 +44,9 @@
         <?php }else{?>
         
             <h1> Error Modifying Movie <h1>
+
         <?php echo $conn->error; ?>
+
         <?php } ?>
 
         <?php mysqli_close($conn); ?>

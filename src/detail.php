@@ -3,6 +3,7 @@
 
     $id = $_GET['GETID'];
     $query = "SELECT * FROM pelicula WHERE id_pelicula = '$id'";
+
     $pelicula = $conn->query($query);
 
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
@@ -39,6 +40,7 @@
                 <li><a href="scienceFiction.php">Science fiction</a></li>
                 <li><a href="romance.php">Romance</a></li>
                 <div class="dropdown">
+
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expaned="false"><strong>
                 Other</strong><span class="caret"></span>
                 </button>
@@ -71,7 +73,7 @@
                         $geners = $row['categoria'];
                         $trailer = $row['trailer'];
                         ?>
-                    <div class="card text-center text-black bg-light mb-3" style="width: 16rem;">
+                    <div class="card text-center text-black bg-light mb-3" style="width: 27rem;">
                         <a href="detail.php?GETID=<?php echo $id; ?>">
                             <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
                         </a>
@@ -80,9 +82,13 @@
                         <div class="card-title">
                             <h2 class="card-text"><strong><?php echo $title; ?></strong></h2>
                         </div>
-                        <div class="card-title">
-                            <h5 class="card-title"><strong>The Genres</strong></h5>
-                            <p class="card-text"></p>
+                        <div class="row text-center">
+                            <div class="card-title">
+                                <h5 class="card-title"><strong>The Genres</strong></h5>
+                                <p class="card-text genres"><?php echo $geners; ?></p>
+                                <p class="card-text datas"><?php echo $datas; ?></p>
+                                <p class="card-text clasificacion"><?php echo $clasificacion; ?></p>
+                            </div>
                         </div>
                         <div class="card-body mb-3">
                             <h5 class="card-title"><strong>The Synopsis</strong></h5>
@@ -93,6 +99,7 @@
                         </div>
                         <div id="TrailerButton">
                             <a href="#" id="button" class="btn btn-outline-primary rounded-pill">Trailer</a>
+
                         </div>
                         <div class="card-body mb-3">
                             <a href="showModified.php?GETID=<?php echo $id ?>" class="btn btn-outline-primary rounded-pill">Update Movie</a>
@@ -118,7 +125,6 @@
         </section>
         <a href="index.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Back</a>
     </main>
-    <script type="text/javascript" src="../js/main.js"></script>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

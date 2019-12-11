@@ -28,7 +28,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: auto;
+    width: 8.7%;
     background-color: #fff;
     position: fixed;
     height: 100%;
@@ -69,10 +69,10 @@ li a.active {
 }
 
 .card-big {
-    margin: 10px auto;
+    margin: 10px 100px;
     padding: 60px;
     width: 35rem;
-    display: none;
+    display: grid;
     height: auto;
     grid-template-columns: 200px;
     grid-template-rows: 200px 200px 100px;
@@ -108,53 +108,10 @@ li a.active {
     text-align: center;
 }
 
-
 .buttom-right {
-    margin: 50px 120px;
+    margin: 50px 220px;
     padding: 1.2rem 3rem;
     float: right;
-    text-align: center;
-}
-
-
-.text-center {
-    justify-content: center;
-}
-
-.datas {
-    margin: 5px auto;
-    right: 0px;
-    position: relative;
-    justify-content: right;
-    color: #444;
-    text-align: center;
-}
-
-.clasificacion {
-    margin: 5px auto;
-    left: 58px;
-    top: -28px;
-    position: relative;
-    justify-content: left;
-    color: #444;
-    text-align: center;
-}
-
-.genres {
-    margin: 5px auto;
-    right: 54px;
-    bottom: -30px;
-    position: relative;
-    justify-content: right;
-    color: #444;
-    text-align: center;
-}
-
-.buttom-right {
-    margin: 50px 120px;
-    padding: 1.2rem 3rem;
-    float: right;
-    text-align: center;
 }
 
 .buttom-right:hover {
@@ -163,54 +120,10 @@ li a.active {
 
 .buttom-left {
     margin: 50px 220px;
-    padding: 4.2rem 3rem;
+    padding: 1.2rem 3rem;
     float: left;
-    text-align: center;
 }
 
 .buttom-right:hover {
     transform: scale(1.12);
-}
-
-.dropdown:hover>.dropdown-menu {
-    display: block;
-}
-
-.bg-modal {
-	background-color: rgba(0, 0, 0, 0.7);
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	display: none;
-	justify-content: center;
-	align-items: center;
-}
-
-.modal-contents {
-	height: 400px;
-	width: auto;
-	background-color: white;
-	text-align: center;
-	padding: 40px;
-	position: relative;
-    border-radius: 4px;
-}
-
-input {
-	margin: 15px auto;
-	display: block;
-	width: 50%;
-	padding: 8px;
-	border: 1px solid gray;
-}
-
-.close {
-	position: absolute;
-	top: 0;
-	right: 10px;
-	font-size: 42px;
-	color: #333;
-	transform: rotate(45deg);
-	cursor: pointer;
 }

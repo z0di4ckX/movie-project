@@ -1,7 +1,7 @@
 <?php 
     include('../include/connect.php');
 
-    $query = "SELECT id_pelicula, titulo, poster,categoria  FROM pelicula WHERE categoria = 1";
+    $query = "SELECT id_pelicula, titulo, poster FROM pelicula";
 
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
     
@@ -25,7 +25,7 @@
             <ul>
             <li><a href="index.php"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
             <li><a class="active" href="index.php">Home</a></li>
-            <li><a href="#"><strong>Genres</strong></a></li>
+            <li><a href="#">Popular</a></li>
             <li><a href="action.php">Action</a></li>
                 <li><a href="adventure.php">Adventure</a></li>
                 <li><a href="animation.php">Animation</a></li>
@@ -33,18 +33,8 @@
                 <li><a href="drama.php">Drama</a></li>
                 <li><a href="horror.php">Horror</a></li>
                 <li><a href="suspense.php">Suspense</a></li>
-                <li><a href="scienceFiction.php">Science fiction</a></li>
                 <li><a href="romance.php">Romance</a></li>
-                <div class="dropdown">
-
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expaned="false"><strong>
-                Other</strong><span class="caret"></span>
-                </button>
-                    <div class="dropdown-menu" aria-labeledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="showModified.php">Update Movie</a>
-                        <a class="dropdown-item" href="actor.php">Add Actor</a>
-                    </div>
-                </div>
+                <li><a href="scienceFiction.php">Science fiction</a></li>
             </ul>
         </div>
         <div>
@@ -52,7 +42,8 @@
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Adventure</h1>
+        <h1 class="main_title">Popular</h1>
+        <h4 class="main_title">movie</h4>
         <hr>
     </div>
     <main>
@@ -62,12 +53,12 @@
                 <table class="table table-strip table-hover table-bordered row_size">
                     <!--PHP script loop to read data base information  -->
                     <?php while($row = mysqli_fetch_assoc($result)) { 
-                        $id = $row['id_pelicula'];
+                        $id_pelicula = $row['id_pelicula'];
                         $poster = $row['poster'];
                         $title = $row['titulo'];
                     ?>
                     <div class="card text-center text-black bg-light mb-3"  style="width: 16rem;">
-                        <a href="detail.php?GETID=<?php echo $id; ?>">
+                        <a href="detail.php?GETID=<?php echo $id_pelicula; ?>">
                             <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
                         </a>
                         <div class="card-title">
@@ -79,8 +70,7 @@
                 </table>
             </div>
         </section>
-        <a href="animation.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Next</a>
-        <a href="action.php" class="buttom-left  btn btn-outline-primary rounded-pill mb-3">Back</a>
+        <a href="action.php" class="buttom-right btn btn-outline-primary rounded-pill">Next</a>
     </main>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

@@ -1,13 +1,13 @@
 <?php
 
-include("../connect.php");
+include('../connect.php');
 
-$id = $_GET['id_pelicula'];
-$query = "SELECT * FROM pelicula WHERE id_pelicula = '$id'";
-$pelicula = $conn->query($query);
+$id = $_GET['GetID'];
 
+$query = "DELETE FROM pelicula WHERE id_pelicula = '$id'";
+
+$result = $conn->query($query);
 ?>
-
 
 <html>
 <meta charset="UTF-8">
@@ -15,22 +15,22 @@ $pelicula = $conn->query($query);
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
-<title> Ver Pelicula </title>
+<title> Eliminar Articulo </title>
 </head>
 
 <body>
 <body>
 <center>
 <?php 
-if($pelicula>0) {
+if($result>0) {
 ?>
 
-<h1> Film Details</h1>
-<?php header("location: film.php"); ?>
+<h1> Usuario Eliminado</h1>
+<?php header("location: index.php"); ?>
 <?php } else {?>
-<h1> Error al Buscar Pelicula </h1>
-<?php echo "Error: ". $query . "<br>" > $conn->error;
-    } ?>
+<h1> Error al Eliminar Usuario </h1>
+
+<?php } ?>
 
 <?php
 mysqli_close($conn);

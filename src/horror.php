@@ -36,6 +36,7 @@
                 <li><a href="scienceFiction.php">Science fiction</a></li>
                 <li><a href="romance.php">Romance</a></li>
                 <div class="dropdown">
+
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expaned="false"><strong>
                 Other</strong><span class="caret"></span>
                 </button>
