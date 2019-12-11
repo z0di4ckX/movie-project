@@ -17,6 +17,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $(".btns").click(function(){
+            $(".input").toggleClass("active").focus;
+            $(this).toggleClass("animate");
+            $(".input").val("");
+        });    
+    });
+    </script>
     <title>Interflix</title>
 </head>
 <body>
@@ -40,19 +51,23 @@
                 Other</strong><span class="caret"></span>
                 </button>
                     <div class="dropdown-menu" aria-labeledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="showModified.php">Update Movie</a>
                         <a class="dropdown-item" href="actor.php">Add Actor</a>
+                        <a href="createMovie.php" class="dropdown-item">Add Movie</a>
                     </div>
                 </div>
             </ul>
         </div>
-        <div>
-            <img class="search" src="../img/search.png" alt="forget-search">
+        <div class="wrapper">
+            <div class="search-box">
+                <input type="text" placeholder="Search..." class="input">
+                <div class="btns">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Popular</h1>
-        <h4 class="main_title">movie</h4>
+        <h1 class="main_title">Popular Movie</h1>
         <hr>
     </div>
     <main>

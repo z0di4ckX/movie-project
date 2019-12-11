@@ -40,13 +40,12 @@
                 <li><a href="scienceFiction.php">Science fiction</a></li>
                 <li><a href="romance.php">Romance</a></li>
                 <div class="dropdown">
-
                 <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expaned="false"><strong>
                 Other</strong><span class="caret"></span>
                 </button>
                     <div class="dropdown-menu" aria-labeledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="showModified.php">Update Movie</a>
                         <a class="dropdown-item" href="actor.php">Add Actor</a>
+                        <a href="createMovie.php" class="dropdown-item">Add Movie</a>
                     </div>
                 </div>
             </ul>
@@ -70,6 +69,8 @@
                         $poster = $row['poster'];
                         $title = $row['titulo'];
                         $text = $row['sinopsis'];
+                        $datas = $row['release_date'];
+                        $clasificacion = $row['clasificacion'];
                         $geners = $row['categoria'];
                         $trailer = $row['trailer'];
                         ?>
@@ -78,7 +79,7 @@
                             <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
                         </a>
                     </div>
-                    <div class="card card-big">
+                    <div id="card-big">
                         <div class="card-title">
                             <h2 class="card-text"><strong><?php echo $title; ?></strong></h2>
                         </div>
@@ -97,16 +98,13 @@
                         <div class="card-body mb-3">
                             <h5 class="card-title"><strong>The Cast</strong></h5>
                         </div>
-                        <div id="TrailerButton">
-                            <a href="#" id="button" class="btn btn-outline-primary rounded-pill">Trailer</a>
-
+                        <div class="row row_size card-button">
+                            <div>
+                                <a href="#" id="button" class="btn btn-outline-primary rounded-pill">Trailer</a>
+                                <a class="btn btn-outline-primary rounded-pill" href="showModified.php?GETID=<?php echo $id ?>">Update Movie</a>
+                                <a class="btn btn-outline-primary rounded-pill" href="../CRUD/delete.php?GETID=<?php echo $id ?>">Delete Movie</a>
+                            </div>
                         </div>
-                        <div class="card-body mb-3">
-                            <a href="showModified.php?GETID=<?php echo $id ?>" class="btn btn-outline-primary rounded-pill">Update Movie</a>
-                        </div>  
-                        <div class="card-body mb-3">
-                            <a href="../CRUD/delete.php?GETID=<?php echo $id ?>" class="btn btn-outline-primary rounded-pill">Delete Movie</a>
-                        </div> 
                     </div>
                     <?php   } ?>
                     <!--PHP script end loop  -->

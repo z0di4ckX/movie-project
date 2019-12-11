@@ -1,4 +1,6 @@
-<?php include('../include/connect.php'); 
+<?php 
+
+    include('../include/connect.php'); 
 
     $id = $_GET['GETID'];
 
@@ -28,8 +30,7 @@
 </head>
 <body>
     <header>
-
-        <div class="container">
+        <div class="conteiner">
             <ul>
             <li><a href="index.php"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
             <li><a class="active" href="index.php">Home</a></li>
@@ -48,8 +49,8 @@
                 Other</strong><span class="caret"></span>
                 </button>
                     <div class="dropdown-menu" aria-labeledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="showModified.php">Update Movie</a>
                         <a class="dropdown-item" href="actor.php">Add Actor</a>
+                        <a href="createMovie.php" class="dropdown-item">Add Movie</a>
                     </div>
                 </div>
             </ul>
@@ -59,13 +60,12 @@
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Popular</h1>
-        <h4 class="main_title">movie</h4>
+        <h1 class="main_title">Update Movie</h1>
         <hr>
     </div>
     <main>
         <!-- Section 1 -->
-        <section class="section-1 p-0 text-center">
+        <section class="section-1 p-0 text-center inputActor">
             <?php 
                 while($row = mysqli_fetch_assoc($result)) {
                     $id = $row['id_pelicula'];
@@ -88,8 +88,17 @@
                 <input type="text" name="titulo" class="form-control" value="<?php echo $titulo; ?>"></input>
             </div>
             <div class="form-group">
-                <label for="categoria">Categoria</label>
-                <input type="text" name="categoria" class="form-control" value="<?php echo $categoria; ?>">
+            <label for="categoria">Categoria</label>
+                <select class="form-control" name="categoria">
+                <option value="" SELECTED> Categoria</option>
+                <?php
+                while($cat = $cats->fetch_assoc()) {
+                    $idAct = $cat['id_categoria'];
+                    $nombre = $cat['categoria'];
+                    echo "<option value='$idAct'> $idAct.&nbsp;$nombre </option>";
+                }
+                ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="release_date">Fecha de Estreno</label>
@@ -158,10 +167,6 @@
                 </select>
                 <label for="pulicadora">Publicadora</label>
                 <input type="text" name="pulicadora" class="form-control" value="<?php echo $publicadora; ?>">
-            </div>
-            <div class="form-group">
-                <label for="trailer">Trailer</label>
-                <input type="text" name="trailer" class="form-control" value="<?php echo $trailer; ?>">
             </div>
             <button type="submit" class="btn btn-success" name="Guardar" value="Actualizar">Submit</button>
             <a class="btn btn-primary" href="index.php">Back</a>
