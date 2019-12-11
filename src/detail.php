@@ -3,6 +3,7 @@
 
     $id = $_GET['GETID'];
     $query = "SELECT * FROM pelicula WHERE id_pelicula = '$id'";
+    $queryJoin = "SELECT pelicula.id_pelicula, pelicula.categoria,categoria.categoria FROM pelicula INNER JOIN categoria ON pelicula.id_categoria = categoria.id_categoria";
     $pelicula = $conn->query($query);
 
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
@@ -64,12 +65,12 @@
                         $poster = $row['poster'];
                         $title = $row['titulo'];
                         $text = $row['sinopsis'];
-                        $geners = $row['categoria'];
                         $datas = $row['release_date'];
+                        $geners = $row['categoria'];
                         $clasificacion = $row['clasificacion'];
                         $trailer = $row['trailer'];
                         ?>
-                    <div class="card text-center text-black bg-light mb-3" style="width: 16rem;">
+                    <div class="card text-center text-black bg-light mb-3" style="width: 26rem;">
                         <a href="detail.php?GETID=<?php echo $id; ?>">
                             <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
                         </a>

@@ -69,7 +69,7 @@ li a.active {
 }
 
 .card-big {
-    margin: 10px 100px;
+    margin: 10px auto;
     padding: 60px;
     width: 35rem;
     display: none;
