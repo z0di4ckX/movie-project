@@ -150,6 +150,13 @@ li a.active {
     text-align: center;
 }
 
+.inputActor {
+    margin: 20px auto;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+}
+
 .buttom-right {
     margin: 50px 120px;
     padding: 1.2rem 3rem;

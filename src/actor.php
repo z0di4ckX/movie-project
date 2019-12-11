@@ -1,4 +1,6 @@
-<?php include('../include/connect.php'); ?>
+<?php 
+    include('../include/connect.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +12,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="../js/dropdown.js"></script>
     <title>Interflix</title>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="conteiner">
             <ul>
             <li><a href="index.php"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
             <li><a class="active" href="index.php">Home</a></li>
@@ -45,33 +46,31 @@
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Popular</h1>
-        <h4 class="main_title">movie</h4>
+        <h1 class="main_title">Add Actor</h1>
         <hr>
     </div>
     <main>
         <!-- Section 1 -->
-        <div class="container">
         <section class="section-1 p-0 text-center">
-        <form name="modificar" method="POST" action="../CRUD/añadirActor.php">
-            <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" class="form-control" value=""></input>
+            <div class="inputActor">
+                <form name="modificar" method="POST" action="../CRUD/añadirActor.php">
+                    <div class="form-group">
+                        
+                        <input type="text" name="nombre" class="form-control" value="" placeholder="First Name" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="apellidos" class="form-control" value="" placeholder="Last Name" />
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" name="bio" class="form-control" value="" rows="10" placeholder="Biografia"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success" name="Guardar" value="Actualizar">Submit</button>
+                    <a class="btn btn-primary" href="index.php">Back</a>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="apellidos">Apellidos</label>
-                <input type="text" name="apellidos" class="form-control" value="">
-            </div>
-            <div class="form-group">
-                <label for="bio">Biografia</label>
-                <textarea type="text" name="bio" class="form-control" value="" rows="3"></textarea>
-            </div>
-    
-            <button type="submit" class="btn btn-success" name="Guardar" value="Actualizar">Submit</button>
-            <a class="btn btn-primary" href="index.php">Back</a>
-        </form>
         </section>
-        </div>
+        <a href="action.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Next</a>
     </main>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
