@@ -14,6 +14,9 @@
     $actorResult2 = mysqli_query($conn, $queryActor);
     $actorResult3 = mysqli_query($conn, $queryActor);
 
+    $CatQuery = "SELECT * FROM categoria";
+    $cats = mysqli_query($conn, $CatQuery);
+
 ?>
 
 <!DOCTYPE html>
@@ -88,9 +91,9 @@
                 <input type="text" name="titulo" class="form-control" value="<?php echo $titulo; ?>"></input>
             </div>
             <div class="form-group">
-            <label for="categoria">Categoria</label>
+                <label for="categoria">Category</label>
                 <select class="form-control" name="categoria">
-                <option value="" SELECTED> Categoria</option>
+                <option value="" SELECTED></option>
                 <?php
                 while($cat = $cats->fetch_assoc()) {
                     $idAct = $cat['id_categoria'];
