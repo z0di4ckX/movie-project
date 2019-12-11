@@ -1,6 +1,6 @@
 <?php
 
-include('../connect.php');
+include('../include/connect.php');
 
 $id = $_GET['GETID'];
 
@@ -28,7 +28,7 @@ if($result>0) {
 ?>
 
 <h1> Delete User</h1>
-<?php header("location: index.php"); ?>
+<?php header("location: ../src/index.php"); ?>
 <?php } else {?>
 <h1> Error Modifying Movie </h1>
 

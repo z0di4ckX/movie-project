@@ -50,8 +50,8 @@
                 Other</strong><span class="caret"></span>
                 </button>
                     <div class="dropdown-menu" aria-labeledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="showModified.php">Update Movie</a>
                         <a class="dropdown-item" href="actor.php">Add Actor</a>
+                        <a href="createMovie.php" class="dropdown-item">Add Movie</a>
                     </div>
                 </div>
             </ul>

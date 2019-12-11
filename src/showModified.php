@@ -49,8 +49,8 @@
                 Other</strong><span class="caret"></span>
                 </button>
                     <div class="dropdown-menu" aria-labeledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="showModified.php">Update Movie</a>
                         <a class="dropdown-item" href="actor.php">Add Actor</a>
+                        <a href="createMovie.php" class="dropdown-item">Add Movie</a>
                     </div>
                 </div>
             </ul>
@@ -88,8 +88,17 @@
                 <input type="text" name="titulo" class="form-control" value="<?php echo $titulo; ?>"></input>
             </div>
             <div class="form-group">
-                <label for="categoria">Categoria</label>
-                <input type="text" name="categoria" class="form-control" value="<?php echo $categoria; ?>">
+            <label for="categoria">Categoria</label>
+                <select class="form-control" name="categoria">
+                <option value="" SELECTED> Categoria</option>
+                <?php
+                while($cat = $cats->fetch_assoc()) {
+                    $idAct = $cat['id_categoria'];
+                    $nombre = $cat['categoria'];
+                    echo "<option value='$idAct'> $idAct.&nbsp;$nombre </option>";
+                }
+                ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="release_date">Fecha de Estreno</label>
@@ -158,10 +167,6 @@
                 </select>
                 <label for="pulicadora">Publicadora</label>
                 <input type="text" name="pulicadora" class="form-control" value="<?php echo $publicadora; ?>">
-            </div>
-            <div class="form-group">
-                <label for="trailer">Trailer</label>
-                <input type="text" name="trailer" class="form-control" value="<?php echo $trailer; ?>">
             </div>
             <button type="submit" class="btn btn-success" name="Guardar" value="Actualizar">Submit</button>
             <a class="btn btn-primary" href="index.php">Back</a>

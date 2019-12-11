@@ -3,18 +3,18 @@
 include('../connect.php');
 
 $id_pelicula = $_GET['GetID'];
-$titulo = $_POST['titulo'];
-$categoria = $_POST['categoria'];
-$rDate = $_POST['release_date'];
-$sinopsis = $_POST['sinopsis'];
-$poster = $_POST['poster'];
-$director = $_POST['director'];
-$publicadora = $_POST['publicadora'];
-$clasificacion = $_POST['clasificacion'];
-$actor1 = $_POST['actor1'];
-$actor2 = $_POST['actor2'];
-$actor3 = $_POST['actor3'];
-$trailer = $_POST['trailer'];
+$titulo = $conn->real_escape_string($_POST['titulo']);
+$categoria = $conn->real_escape_string($_POST['categoria']);
+$rDate = $conn->real_escape_string($_POST['release_date']);
+$sinopsis = $conn->real_escape_string($_POST['sinopsis']);
+$poster = $conn->real_escape_string($_POST['poster']);
+$director = $conn->real_escape_string($_POST['director']);
+$publicadora = $conn->real_escape_string($_POST['publicadora']);
+$clasificacion = $conn->real_escape_string($_POST['clasificacion']);
+$actor1 = $conn->real_escape_string($_POST['actor1']);
+$actor2 = $conn->real_escape_string($_POST['actor2']);
+$actor3 = $conn->real_escape_string($_POST['actor3']);
+$trailer = $conn->real_escape_string($_POST['trailer']);
 
 $query = "UPDATE pelicula SET titulo = '$titulo', categoria = '$categoria', release_date = '$rDate', sinopsis = '$sinopsis',
     poster = '$poster', director = '$director', publicadora = '$publicadora', clasificacion = '$clasificacion',
