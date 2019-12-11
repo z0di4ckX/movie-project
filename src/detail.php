@@ -70,6 +70,8 @@
                         $poster = $row['poster'];
                         $title = $row['titulo'];
                         $text = $row['sinopsis'];
+                        $datas = $row['release_date'];
+                        $clasificacion = $row['clasificacion'];
                         $geners = $row['categoria'];
                         $trailer = $row['trailer'];
                         ?>

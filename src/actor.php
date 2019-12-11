@@ -55,14 +55,13 @@
             <div class="inputActor">
                 <form name="modificar" method="POST" action="../CRUD/añadirActor.php">
                     <div class="form-group">
-                        
                         <input type="text" name="nombre" class="form-control" value="" placeholder="First Name" />
                     </div>
                     <div class="form-group">
                         <input type="text" name="apellidos" class="form-control" value="" placeholder="Last Name" />
                     </div>
                     <div class="form-group">
-                        <textarea type="text" name="bio" class="form-control" value="" rows="10" placeholder="Biografia"></textarea>
+                        <textarea type="text" name="bio" class="form-control" value="" rows="10" placeholder="Biography"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-success" name="Guardar" value="Actualizar">Submit</button>
@@ -70,7 +69,6 @@
                 </form>
             </div>
         </section>
-        <a href="action.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Next</a>
     </main>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

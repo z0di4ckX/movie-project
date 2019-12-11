@@ -1,4 +1,6 @@
-<?php include('../include/connect.php'); 
+<?php 
+
+    include('../include/connect.php'); 
 
     $id = $_GET['GETID'];
 
@@ -28,8 +30,7 @@
 </head>
 <body>
     <header>
-
-        <div class="container">
+        <div class="conteiner">
             <ul>
             <li><a href="index.php"><img class="nav-image" src="../img/interflix.png" alt="Interflix"></a></li>
             <li><a class="active" href="index.php">Home</a></li>
@@ -59,13 +60,12 @@
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Popular</h1>
-        <h4 class="main_title">movie</h4>
+        <h1 class="main_title">Update Movie</h1>
         <hr>
     </div>
     <main>
         <!-- Section 1 -->
-        <section class="section-1 p-0 text-center">
+        <section class="section-1 p-0 text-center inputActor">
             <?php 
                 while($row = mysqli_fetch_assoc($result)) {
                     $id = $row['id_pelicula'];
