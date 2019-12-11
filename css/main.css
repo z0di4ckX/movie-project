@@ -72,15 +72,15 @@ color: rgb(7, 106, 255);
   
 .btns {
     position: absolute;
-    width: 63px;
-    height: 63px;
+    width: 53px;
+    height: 53px;
     background: rgb(7, 106, 255);
     border-radius: 50%;
     right: 45px;
     top: 10px;
     cursor: pointer;
     text-align: center;
-    line-height: 64px;
+    line-height: 54px;
     font-size: 20px;
     color: #fff;
     transition: all 0.8s ease;}
@@ -202,7 +202,7 @@ li a.active {
 
 .datas {
     margin: 5px auto;
-    right: 0px;
+    right: -20px;
     position: relative;
     justify-content: right;
     color: #444;
@@ -211,7 +211,7 @@ li a.active {
 
 .clasificacion {
     margin: 5px auto;
-    left: 58px;
+    left: 100px;
     top: -28px;
     position: relative;
     justify-content: left;
@@ -221,7 +221,7 @@ li a.active {
 
 .genres {
     margin: 5px auto;
-    right: 54px;
+    right: 85px;
     bottom: -30px;
     position: relative;
     justify-content: right;

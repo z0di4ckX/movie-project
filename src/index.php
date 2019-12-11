@@ -4,7 +4,6 @@
     $query = "SELECT id_pelicula, titulo, poster FROM pelicula";
 
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
-    
 ?>
 
 <!DOCTYPE html>
@@ -57,17 +56,19 @@
                 </div>
             </ul>
         </div>
-        <div class="wrapper">
+        <div class="wrapper sm-2">
             <div class="search-box">
-                <input type="text" placeholder="Search..." class="input">
+            <form action="result.php" method="GET">
+                <input type="text" placeholder="Search..." class="input" name="buscar">
                 <div class="btns">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
+            </form>
             </div>
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Popular Movie</h1>
+        <h1 class="main_title">Popular Movies</h1>
         <hr>
     </div>
     <main>
