@@ -60,7 +60,7 @@
         <hr>
     </div>
     <main>
-        <div class="container">
+        <div class="inputActor container">
             <h2>Deberian añadir actor primero</h2>
             <form name="modificar" method="POST" action="../CRUD/create.php">
             <div class="form-group">
@@ -68,9 +68,9 @@
                 <input type="text" name="titulo" class="form-control" value=""></input>
             </div>
             <div class="form-group">
-                <label for="categoria">Categoria</label>
+                <label for="categoria">Category</label>
                 <select class="form-control" name="categoria">
-                <option value="" SELECTED> Categoria</option>
+                <option value="" SELECTED></option>
                 <?php
                 while($cat = $cats->fetch_assoc()) {
                     $idAct = $cat['id_categoria'];
@@ -81,7 +81,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="release_date">Fecha de Estreno</label>
+                <label for="release_date">Release date</label>
                 <input type="text" name="release_date" class="form-control" value="">
             </div>
             <div class="form-group">
@@ -97,17 +97,17 @@
                 <input type="text" name="director" class="form-control" value="">
             </div>
             <div class="form-group">
-                <label for="publicadora">Publicadora</label>
+                <label for="publicadora">Publisher</label>
                 <input type="text" name="publicadora" class="form-control" value="">
             </div>
             <div class="form-group">
-                <label for="clasificacion"> Clasificacion </label>
+                <label for="clasificacion"> Classification </label>
                 <input type="text" name="clasificacion" class="form-control" value="">
             </div>
             <div class="form-group">
-                <label for="actor1">Actor 1</label>
+                <label for="actor1">Select Actor 1</label>
                 <select class="form-control" name="actor1">
-                <option value="" SELECTED> Seleccionar Actor</option>
+                <option value="" SELECTED></option>
                 <?php
                 while($act = $actorResult->fetch_assoc()) {
                     $idAct = $act['id_actor'];
@@ -119,9 +119,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="actor2">Actor 2</label>
+                <label for="actor2">Select Actor 2</label>
                 <select class="form-control" name="actor2">
-                <option value="" SELECTED> Seleccionar Actor</option>
+                <option value="" SELECTED></option>
                 <?php
                 while($act = $actorResult2->fetch_assoc()) {
                     $idAct = $act['id_actor'];
@@ -133,9 +133,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="actor3">Actor 3</label>
+                <label for="actor3">Select Actor 3</label>
                 <select class="form-control" name="actor3">
-                <option value="" SELECTED> Seleccionar Actor</option>
+                <option value="" SELECTED></option>
                 <?php
                 while($act = $actorResult3->fetch_assoc()) {
                     $idAct = $act['id_actor'];
