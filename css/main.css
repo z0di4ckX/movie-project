@@ -204,7 +204,6 @@ li a.active {
     margin: 1px auto;
     position: relative;
     justify-content: right;
-    color: #444;
     text-align: center;
 }
 
@@ -212,7 +211,6 @@ li a.active {
     margin: 1px auto;
     position: relative;
     justify-content: left;
-    color: #444;
     text-align: center;
 }
 
@@ -220,7 +218,6 @@ li a.active {
     margin: 1px auto;
     position: relative;
     justify-content: right;
-    color: #444;
     text-align: center;
 }
 
