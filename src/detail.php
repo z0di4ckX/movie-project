@@ -94,9 +94,9 @@
                         <div class="row text-center">
                             <div class="card-title">
                                 <h5 class="card-title"><strong>The Genres</strong></h5>
-                                <p class="card-text genres"><?php echo $geners; ?></p>
-                                <p class="card-text datas"><?php echo $datas; ?></p>
-                                <p class="card-text clasificacion"><?php echo $clasificacion; ?></p>
+                                <p class="card-text badge badge-pill badge-secondary" id="genres"><?php echo $geners; ?></p>
+                                <p class="card-text badge badge-pill badge-secondary" id="datas"><?php echo $datas; ?></p>
+                                <p class="card-text badge badge-pill badge-secondary" id="clasificacion"><?php echo $clasificacion; ?></p>
                             </div>
                         </div>
                         <div class="card-body mb-3">
@@ -107,7 +107,6 @@
                             <div>
                                 <a href="#" id="button" class="btn btn-outline-primary rounded-pill">Trailer</a>
                                 <a class="btn btn-outline-primary rounded-pill" href="showModified.php?GETID=<?php echo $id ?>">Update Movie</a>
-                                <a class="btn btn-outline-primary rounded-pill" href="../CRUD/delete.php?GETID=<?php echo $id ?>">Delete Movie</a>
                             </div>
                         </div>
                     </div>

@@ -61,7 +61,7 @@
     </div>
     <main>
         <div class="inputActor container">
-            <h2>Deberian añadir actor primero</h2>
+            <h2>They should add actor first</h2>
             <form name="modificar" method="POST" action="../CRUD/create.php">
             <div class="form-group">
                 <label for="titulo">Movie Title</label>
