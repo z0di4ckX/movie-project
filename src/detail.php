@@ -73,12 +73,39 @@
                         $clasificacion = $row['clasificacion'];
                         $id_geners = $row['categoria'];
                         $trailer = $row['trailer'];
+                        $id_actor = $row['actor1'];
+                        $id_actor2 = $row['actor2'];
+                        $id_actor3 = $row['actor3'];
 
                         $query2 = "SELECT * FROM categoria WHERE id_categoria = '$id_geners'";
                         $result2 = mysqli_query($conn, $query2) or die("databese error:" . mysqli_error($conn));
 
                         while($row = mysqli_fetch_assoc($result2)) {
                             $geners = $row['categoria'];
+                        }
+
+                        $query3 = "SELECT * FROM actor WHERE id_actor = '$id_actor'";
+                        $result3 = mysqli_query($conn, $query3) or die("databese error:" . mysqli_error($conn));
+
+                        while($row = mysqli_fetch_assoc($result3)) {
+                            $name = $row['nombre'];
+                            $lastName = $row['apellidos'];
+                        }
+
+                        $query4 = "SELECT * FROM actor WHERE id_actor = '$id_actor2'";
+                        $result4 = mysqli_query($conn, $query4) or die("databese error:" . mysqli_error($conn));
+
+                        while($row = mysqli_fetch_assoc($result4)) {
+                            $name2 = $row['nombre'];
+                            $lastName2 = $row['apellidos'];
+                        }
+
+                        $query5 = "SELECT * FROM actor WHERE id_actor = '$id_actor3'";
+                        $result5 = mysqli_query($conn, $query5) or die("databese error:" . mysqli_error($conn));
+
+                        while($row = mysqli_fetch_assoc($result5)) {
+                            $name3 = $row['nombre'];
+                            $lastName3 = $row['apellidos'];
                         }
 
                         ?>
@@ -103,10 +130,19 @@
                             <h5 class="card-title"><strong>The Synopsis</strong></h5>
                             <p class="card-text"><?php echo $text; ?></p>
                         </div>
+                        <div class="row text-center">
+                            <div class="card-title">
+                                <h5 class="card-title"><strong>The cast</strong></h5>
+                                <p class="card-text badge badge-pill badge-secondary" id="genres"><?php echo $name; ?> <?php echo $lastName; ?></p>
+                                <p class="card-text badge badge-pill badge-secondary" id="genres"><?php echo $name2; ?> <?php echo $lastName2; ?></p>
+                                <p class="card-text badge badge-pill badge-secondary" id="genres"><?php echo $name3; ?> <?php echo $lastName3; ?></p>
+                            </div>
+                        </div>
                         <div class="row row_size card-button">
                             <div>
                                 <a href="#" id="button" class="btn btn-outline-primary rounded-pill">Trailer</a>
                                 <a class="btn btn-outline-primary rounded-pill" href="showModified.php?GETID=<?php echo $id ?>">Update Movie</a>
+                                <!-- <a class="btn btn-outline-primary rounded-pill" href="../CRUD/delete.php?GETID=<?php echo $id ?>">Delete Movie</a> -->
                             </div>
                         </div>
                     </div>
