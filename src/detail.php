@@ -21,6 +21,16 @@
     crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <script type="text/javascript" src="../js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $(".btns").click(function(){
+            $(".input").toggleClass("active").focus;
+            $(this).toggleClass("animate");
+            $(".input").val("");
+        });    
+    });
+    </script>
     <title>Interflix</title>
 </head>
 <body>
@@ -50,8 +60,15 @@
                 </div>
             </ul>
         </div>
-        <div>
-            <img class="search" src="../img/search.png" alt="forget-search">
+        <div class="wrapper sm-2">
+            <div class="search-box">
+            <form action="result.php" method="GET">
+                <input type="text" placeholder="Search..." class="input" name="buscar">
+                <div class="btns">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </form>
+            </div>
         </div>
     </header>
     <div class="title">
@@ -162,10 +179,10 @@
             </div>
         </section>
         <hr>
-        <section>
-            <div class="title">
-                <h1 class="main_title">Recommended Movies</h1>
-            </div>
+        <div class="title">
+            <h1 class="main_title">Recommended Movies</h1>
+        </div>
+        <section class="section-1 p-0 text-center">
             <div class="row">
                 <table class="table table-strip table-hover table-bordered row_size">
                 <?php 
