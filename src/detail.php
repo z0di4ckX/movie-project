@@ -161,6 +161,34 @@
                 </div>
             </div>
         </section>
+        <hr>
+        <section>
+            <div class="title">
+                <h1 class="main_title">Recommended Movies</h1>
+            </div>
+            <div class="row">
+                <table class="table table-strip table-hover table-bordered row_size">
+                <?php 
+                    $query6 = "SELECT id_pelicula, titulo, poster FROM pelicula";
+                    $result6 = mysqli_query($conn, $query6) or die("datebese error:" . mysqli_error($conn));
+                    
+                    while($row = mysqli_fetch_assoc($result6)) {
+                        $id = $row['id_pelicula'];
+                        $poster = $row['poster'];
+                        $title = $row['titulo'];
+                ?>
+                    <div class="card text-center text-black bg-light mb-3"  style="width: 16rem;">
+                        <a href="detail.php?GETID=<?php echo $id; ?>">
+                            <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
+                        </a>
+                        <div class="card-title">
+                            <p class="card-text"><?php echo $title; ?></p>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </table>
+            </div>
+        </section>
         <a href="index.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Back</a>
     </main>
     <!-- Start bootstrap script -->
