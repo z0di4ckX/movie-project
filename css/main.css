@@ -187,6 +187,9 @@ li a.active {
     text-align: center;
 }
 
+#section-2 {
+    margin: 60px;
+}
 
 .buttom-right {
     margin: 50px 120px;

@@ -180,7 +180,7 @@
         </section>
         <hr>
         <div class="title">
-            <h1 class="main_title">Recommended Movies</h1>
+            <h1 class="main_title" id="section-2">Recommended Movies</h1>
         </div>
         <section class="section-1 p-0 text-center">
             <div class="row">
