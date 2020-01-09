@@ -186,7 +186,7 @@
             <div class="row">
                 <table class="table table-strip table-hover table-bordered row_size">
                 <?php 
-                    $query6 = "SELECT id_pelicula, titulo, poster FROM pelicula";
+                    $query6 = "SELECT * FROM pelicula";
                     $result6 = mysqli_query($conn, $query6) or die("datebese error:" . mysqli_error($conn));
                     
                     while($row = mysqli_fetch_assoc($result6)) {
