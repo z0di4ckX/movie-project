@@ -138,9 +138,9 @@
                         <div class="row text-center">
                             <div class="card-title">
                                 <h5 class="card-title"><strong>The Genres</strong></h5>
-                                <p class="card-text badge badge-pill badge-secondary" id="genres"><?php echo $geners; ?></p>
-                                <p class="card-text badge badge-pill badge-secondary" id="datas"><?php echo $datas; ?></p>
-                                <p class="card-text badge badge-pill badge-secondary" id="clasificacion"><?php echo $clasificacion; ?></p>
+                                <a href="#" class="badge badge-secondary" id="genres"><?php echo $geners; ?></a>
+                                <a href="#" class="badge badge-secondary" id="datas"><?php echo $datas; ?></a>
+                                <a href="#" class="badge badge-secondary" id="clasificacion"><?php echo $clasificacion; ?></a>
                             </div>
                         </div>
                         <div class="card-body mb-3">
@@ -150,9 +150,9 @@
                         <div class="row text-center">
                             <div class="card-title">
                                 <h5 class="card-title"><strong>The cast</strong></h5>
-                                <p class="card-text badge badge-pill badge-secondary" id="genres"><?php echo $name; ?> <?php echo $lastName; ?></p>
-                                <p class="card-text badge badge-pill badge-secondary" id="genres"><?php echo $name2; ?> <?php echo $lastName2; ?></p>
-                                <p class="card-text badge badge-pill badge-secondary" id="genres"><?php echo $name3; ?> <?php echo $lastName3; ?></p>
+                                <a href="#" class="badge badge-secondary" id="genres"><?php echo $name; ?> <?php echo $lastName; ?></a>
+                                <a href="#" class="badge badge-secondary" id="genres"><?php echo $name2; ?> <?php echo $lastName2; ?></a>
+                                <a href="#" class="badge badge-secondary" id="genres"><?php echo $name3; ?> <?php echo $lastName3; ?></a>
                             </div>
                         </div>
                         <div class="row row_size card-button">
