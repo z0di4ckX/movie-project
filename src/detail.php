@@ -172,7 +172,7 @@
             <div class="bg-modal">
                 <div class="modal-contents">
                     <div class="close">+</div>
-                    <form action="">
+                    <form action="#">
                         <?php echo $trailer; ?>
                     </form>
                 </div>
