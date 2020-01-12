@@ -2,7 +2,7 @@
     include('../include/connect.php');
 
     $id = $_GET['GETID'];
-    $query = "SELECT * FROM actor";
+    $query = "SELECT * FROM actor WHERE id_actor = '$id'";
 
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
 ?>

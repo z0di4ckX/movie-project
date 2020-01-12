@@ -112,16 +112,14 @@
                         $result4 = mysqli_query($conn, $query4) or die("databese error:" . mysqli_error($conn));
 
                         while($row = mysqli_fetch_assoc($result4)) {
-                            $name2 = $row['nombre'];
-                            $lastName2 = $row['apellidos'];
+                            $actors2 = array($row['nombre'], $row['apellidos']);
                         }
 
                         $query5 = "SELECT * FROM actor WHERE id_actor = '$id_actor3'";
                         $result5 = mysqli_query($conn, $query5) or die("databese error:" . mysqli_error($conn));
 
                         while($row = mysqli_fetch_assoc($result5)) {
-                            $name3 = $row['nombre'];
-                            $lastName3 = $row['apellidos'];
+                            $actors3 = array($row['nombre'], $row['apellidos']);
                         }
 
                         ?>
@@ -149,9 +147,9 @@
                         <div class="row text-center">
                             <div class="card-title">
                                 <h5 class="card-title"><strong>The cast</strong></h5>
-                                <a href="detailActor.php?GETID=<?php echo $name." ".$lastName; ?>" class="badge badge-secondary" id="genres"><?php echo implode ($actors); ?></a>
-                                <a href="detailActor.php?GETID=<?php echo $name2." ".$lastName2; ?>" class="badge badge-secondary" id="genres"><?php echo $name2; ?> <?php echo $lastName2; ?></a>
-                                <a href="detailActor.php?GETID=<?php echo $name3." ". $lastName3; ?>" class="badge badge-secondary" id="genres"><?php echo $name3; ?> <?php echo $lastName3; ?></a>
+                                <a href="detailActor.php?GETID=<?php echo implode ($actors);?>" class="badge badge-secondary" id="genres"><?php echo implode ($actors); ?></a>
+                                <a href="detailActor.php?GETID=<?php echo implode ($actors2); ?>" class="badge badge-secondary" id="genres"><?php echo implode ($actors2); ?></a>
+                                <a href="detailActor.php?GETID=<?php echo implode ($actors3); ?>" class="badge badge-secondary" id="genres"><?php echo implode ($actors3); ?></a>
                             </div>
                         </div>
                         <div class="row row_size card-button">
