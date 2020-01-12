@@ -1,6 +1,7 @@
 <?php 
     include('../include/connect.php');
 
+    $id = $_GET['GETID'];
     $query = "SELECT * FROM actor";
 
     $result = mysqli_query($conn, $query) or die("databese error:" . mysqli_error($conn));
@@ -68,7 +69,7 @@
         </div>
     </header>
     <div class="title">
-        <h1 class="main_title">Popular Movies</h1>
+        <h1 class="main_title">Actors</h1>
         <hr>
     </div>
     <main>
@@ -78,16 +79,18 @@
                 <table class="table table-strip table-hover table-bordered row_size">
                     <!--PHP script loop to read data base information  -->
                     <?php while($row = mysqli_fetch_assoc($result)) { 
-                        $id = $row['id_pelicula'];
-                        $poster = $row['poster'];
-                        $title = $row['titulo'];
+                        $id = $row['id_actor'];
+                        $name = $row['nombre'];
+                        $lastName = $row['apellidos'];
+                        $bio = $row['bio'];
                     ?>
                     <div class="card text-center text-black bg-light mb-3"  style="width: 16rem;">
                         <a href="detail.php?GETID=<?php echo $id; ?>">
-                            <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
+                            <!-- <img class="card-img-top" src="<?php echo $name; ?>" alt="<?php echo $name; ?>"> -->
                         </a>
                         <div class="card-title">
-                            <p class="card-text"><?php echo $title; ?></p>
+                            <h5 class="card-title"><?php echo $name." ".$lastName; ?></h5>
+                            <p class="card-text"><?php echo $bio; ?></p>
                         </div>
                     </div>
                     <?php } ?>
