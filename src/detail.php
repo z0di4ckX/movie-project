@@ -150,9 +150,9 @@
                         <div class="row text-center">
                             <div class="card-title">
                                 <h5 class="card-title"><strong>The cast</strong></h5>
-                                <a href="#" class="badge badge-secondary" id="genres"><?php echo $name; ?> <?php echo $lastName; ?></a>
-                                <a href="#" class="badge badge-secondary" id="genres"><?php echo $name2; ?> <?php echo $lastName2; ?></a>
-                                <a href="#" class="badge badge-secondary" id="genres"><?php echo $name3; ?> <?php echo $lastName3; ?></a>
+                                <a href="detailActor.php?GETID=<?php echo $name; ?> <?php echo $lastName; ?>" class="badge badge-secondary" id="genres"><?php echo $name; ?> <?php echo $lastName; ?></a>
+                                <a href="detailActor.php?GETID=<?php echo $name2; ?> <?php echo $lastName2; ?>" class="badge badge-secondary" id="genres"><?php echo $name2; ?> <?php echo $lastName2; ?></a>
+                                <a href="detailActor.php?GETID=<?php echo $name3; ?> <?php echo $lastName3; ?>" class="badge badge-secondary" id="genres"><?php echo $name3; ?> <?php echo $lastName3; ?></a>
                             </div>
                         </div>
                         <div class="row row_size card-button">
