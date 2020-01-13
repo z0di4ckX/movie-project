@@ -84,12 +84,12 @@
                         $lastName = $row['apellidos'];
                         $bio = $row['bio'];
                     ?>
-                    <div class="card text-center text-black bg-light mb-3"  style="width: 16rem;">
-                        <a href="detail.php?GETID=<?php echo $id; ?>">
+                    <div id="card-big">
+                        <a href="detailActor.php?GETID=<?php echo $id; ?>">
                             <!-- <img class="card-img-top" src="<?php echo $name; ?>" alt="<?php echo $name; ?>"> -->
                         </a>
                         <div class="card-title">
-                            <h5 class="card-title"><?php echo $name." ".$lastName; ?></h5>
+                            <h5 class="card-title"><strong><?php echo $name." ".$lastName; ?></strong></h5>
                             <p class="card-text"><?php echo $bio; ?></p>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                 </table>
             </div>
         </section>
-        <a href="action.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Next</a>
+        <a href="index.php" class="buttom-right btn btn-outline-primary rounded-pill mb-3">Back</a>
     </main>
     <!-- Start bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

@@ -94,33 +94,44 @@
                         $id_actor2 = $row['actor2'];
                         $id_actor3 = $row['actor3'];
 
+                        // Query for the geners
                         $query2 = "SELECT * FROM categoria WHERE id_categoria = '$id_geners'";
                         $result2 = mysqli_query($conn, $query2) or die("databese error:" . mysqli_error($conn));
 
                         while($row = mysqli_fetch_assoc($result2)) {
                             $geners = $row['categoria'];
                         }
+                        // End the query
 
+                        // Query for the frist actor
                         $query3 = "SELECT * FROM actor WHERE id_actor = '$id_actor'";
                         $result3 = mysqli_query($conn, $query3) or die("databese error:" . mysqli_error($conn));
                             
                         while($row = mysqli_fetch_assoc($result3)) {
-                            $actors = array($row['nombre'], $row['apellidos']);
+                            $id_actor = $row['id_actor'];
+                            $actors = array($row['nombre'], " ", $row['apellidos']);
                         }
+                        // End the query
 
+                        // Query for the second actor
                         $query4 = "SELECT * FROM actor WHERE id_actor = '$id_actor2'";
                         $result4 = mysqli_query($conn, $query4) or die("databese error:" . mysqli_error($conn));
 
                         while($row = mysqli_fetch_assoc($result4)) {
-                            $actors2 = array($row['nombre'], $row['apellidos']);
+                            $id_actor2 = $row['id_actor'];
+                            $actors2 = array($row['nombre'], " ", $row['apellidos']);
                         }
+                        // End the query
 
+                        // Query for the third actor
                         $query5 = "SELECT * FROM actor WHERE id_actor = '$id_actor3'";
                         $result5 = mysqli_query($conn, $query5) or die("databese error:" . mysqli_error($conn));
 
                         while($row = mysqli_fetch_assoc($result5)) {
-                            $actors3 = array($row['nombre'], $row['apellidos']);
+                            $id_actor3 = $row['id_actor'];
+                            $actors3 = array($row['nombre'], " ", $row['apellidos']);
                         }
+                        // End the query
 
                         ?>
                     <div class="card text-center text-black bg-light mb-3" style="width: 27rem;">
@@ -147,9 +158,9 @@
                         <div class="row text-center">
                             <div class="card-title">
                                 <h5 class="card-title"><strong>The cast</strong></h5>
-                                <a href="detailActor.php?GETID=<?php echo implode ($actors);?>" class="badge badge-secondary" id="genres"><?php echo implode ($actors); ?></a>
-                                <a href="detailActor.php?GETID=<?php echo implode ($actors2); ?>" class="badge badge-secondary" id="genres"><?php echo implode ($actors2); ?></a>
-                                <a href="detailActor.php?GETID=<?php echo implode ($actors3); ?>" class="badge badge-secondary" id="genres"><?php echo implode ($actors3); ?></a>
+                                <a href="detailActor.php?GETID=<?php echo $id_actor; ?>" class="badge badge-secondary" id="genres"><?php echo implode ($actors); //Name and Last name for the frist actor ?></a>
+                                <a href="detailActor.php?GETID=<?php echo $id_actor2; ?>" class="badge badge-secondary" id="genres"><?php echo implode ($actors2); //Name and Last name for the second actor ?></a>
+                                <a href="detailActor.php?GETID=<?php echo $id_actor3; ?>" class="badge badge-secondary" id="genres"><?php echo implode($actors3); //Name and Last name for the third actor ?></a>
                             </div>
                         </div>
                         <div class="row row_size card-button">
