@@ -194,16 +194,18 @@
             <div class="row">
                 <table class="table table-strip table-hover table-bordered row_size">
                 <?php 
-                    $query6 = "SELECT * FROM pelicula";
+                    $query6 = "SELECT * FROM pelicula WHERE categoria = '$id_geners'";
                     $result6 = mysqli_query($conn, $query6) or die("datebese error:" . mysqli_error($conn));
-                    
+                                        
                     while($row = mysqli_fetch_assoc($result6)) {
                         $id = $row['id_pelicula'];
                         $poster = $row['poster'];
                         $title = $row['titulo'];
-                ?>
+                        $id_geners = $row['categoria'];
+
+                    ?>
                     <div class="card text-center text-black bg-light mb-3"  style="width: 16rem;">
-                        <a href="detail.php?GETID=<?php echo $id; ?>">
+                        <a href="detail.php?GETID=<?php echo $id." ".$id_geners; ?>">
                             <img class="card-img-top" src="<?php echo $poster; ?>" alt="<?php echo $title; ?>">
                         </a>
                         <div class="card-title">
